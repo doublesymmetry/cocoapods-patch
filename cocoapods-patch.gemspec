@@ -6,14 +6,14 @@ require 'cocoapods-patch/gem_version.rb'
 Gem::Specification.new do |spec|
   spec.name          = 'cocoapods-patch'
   spec.version       = CocoapodsPatch::VERSION
-  spec.authors       = ['Milan Cermak']
-  spec.email         = ['milan.cermak@gmail.com']
-  spec.description   = %q{A short description of cocoapods-patch.}
-  spec.summary       = %q{A longer description of cocoapods-patch.}
-  spec.homepage      = 'https://github.com/EXAMPLE/cocoapods-patch'
+  spec.authors       = ['Double Symmetry']
+  spec.email         = ['team@doublesymmetry.com']
+  spec.description   = 'Create & apply patches to Pods'
+  spec.summary       = 'Create & apply patches to Pods'
+  spec.homepage      = 'https://github.com/DoubleSymmetry/cocoapods-patch'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = Dir['lib/**/*.rb']
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
