@@ -4,11 +4,15 @@ module Pod
   class Command
     class Patch < Command
       class Create < Patch
-        self.summary = 'Creates a patch by diffing upstream Pod with local changes'
-
         self.description = <<-DESC
-            `create` description
+            Creates a patch file comparing your local Pod changes to the upstream
+            version specified in your Podfile. The patch is saved into the `patches`
+            directory.
         DESC
+
+        self.arguments = [
+          CLAide::Argument.new('NAME', true)
+        ]
 
         def initialize(argv)
           @name = argv.shift_argument

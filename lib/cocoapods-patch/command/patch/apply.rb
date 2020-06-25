@@ -4,9 +4,9 @@ module Pod
       class Apply < Patch
         self.summary = 'Applies a patch to an installed Pod'
 
-        self.description = <<-DESC
-            `apply` description
-        DESC
+        self.arguments = [
+          CLAide::Argument.new('NAME', true)
+        ]
 
         def initialize(argv)
           @name = argv.shift_argument
