@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'cocoapods-patch'
   spec.version       = CocoapodsPatch::VERSION
   spec.authors       = ['Double Symmetry']
-  spec.email         = ['team@doublesymmetry.com']
+  spec.email         = ['dev@doublesymmetry.com']
   spec.description   = 'Create & apply patches to Pods'
   spec.summary       = 'Create & apply patches to Pods'
   spec.homepage      = 'https://github.com/DoubleSymmetry/cocoapods-patch'
