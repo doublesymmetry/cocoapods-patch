@@ -1,3 +1,5 @@
+require 'cocoapods'
+
 module Pod
   class Command
     class Patch < Command
@@ -34,9 +36,9 @@ def apply_patch(patch_file)
     apply_cmd = check_cmd.gsub('--check ', '')
     did_apply = system(apply_cmd)
     if did_apply
-      UI.puts "Successfully applied #{patch_file}"
+      Pod::UI.puts "Successfully applied #{patch_file}"
     else
-      UI.warn "Failed to apply #{patch_file}"
+      Pod::UI.warn "Failed to apply #{patch_file}"
     end
   end
 end
