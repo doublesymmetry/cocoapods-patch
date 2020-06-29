@@ -1,4 +1,3 @@
 module CocoapodsPatch
-  VERSION = "0.0.1"
-  NAME = 'cocoapods-patch'
+  VERSION = "0.0.2"
 end
