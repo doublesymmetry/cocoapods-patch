@@ -19,7 +19,9 @@ class Pod::Installer
   def apply_patches
     Pod::UI.puts 'Applying patches if necessary'
     patches_dir = Pathname.new(Dir.pwd) + 'patches'
-    patches = patches_dir.each_child.select { |c| c.to_s.end_with?('.diff') }
-    patches.each { |p| apply_patch(p) }
+    if patches_dir.exist?
+      patches = patches_dir.each_child.select { |c| c.to_s.end_with?('.diff') }
+      patches.each { |p| apply_patch(p) }
+    end
   end
 end
