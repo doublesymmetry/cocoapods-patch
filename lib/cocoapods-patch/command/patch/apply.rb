@@ -30,15 +30,24 @@ end
 
 # also used from the post-install hook
 def apply_patch(patch_file)
-  check_cmd = "git apply --check #{patch_file} --directory=Pods -p2 2> /dev/null"
-  can_apply = system(check_cmd)
-  if can_apply
-    apply_cmd = check_cmd.gsub('--check ', '')
-    did_apply = system(apply_cmd)
-    if did_apply
-      Pod::UI.puts "Successfully applied #{patch_file}"
-    else
-      Pod::UI.warn "Failed to apply #{patch_file}"
+  working_dir = Dir.pwd
+  repo_root = `git rev-parse --show-toplevel`.strip
+  ios_project_path = Pathname.new(working_dir).relative_path_from(Pathname.new(repo_root))
+
+  directory_arg = (ios_project_path.to_s.eql? ".") ? "Pods" : File.join(ios_project_path, 'Pods')
+
+  Dir.chdir(repo_root) {
+    check_cmd = "git apply --check #{patch_file} --directory=#{directory_arg} -p2 2> /dev/null"
+
+    can_apply = system(check_cmd)
+    if can_apply
+      apply_cmd = check_cmd.gsub('--check ', '')
+      did_apply = system(apply_cmd)
+      if did_apply
+        Pod::UI.puts "Successfully applied #{patch_file}"
+      else
+        Pod::UI.warn "Failed to apply #{patch_file}"
+      end
     end
-  end
+  }
 end
