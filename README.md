@@ -15,6 +15,10 @@ Next, add a `plugin 'cocoapods-patch'` line to your Podfile to use the plugin. T
 
 That's it, you're done.
 
+**NOTE:**
+`cocoapods-patch` version 1.0.0 and above require you to use Cocoapods 1.11.0 or greater.
+For anything below that please use version 0.0.5.
+
 ## Usage
 
 ### Creating a patch
