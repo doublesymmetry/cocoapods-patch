@@ -34,7 +34,7 @@ def apply_patch(patch_file)
   repo_root = `git rev-parse --show-toplevel`.strip
   ios_project_path = Pathname.new(working_dir).relative_path_from(Pathname.new(repo_root))
 
-  directory_arg = File.join(ios_project_path, 'Pods')
+  directory_arg = (ios_project_path.to_s.eql? ".") ? "Pods" : File.join(ios_project_path, 'Pods')
 
   Dir.chdir(repo_root) {
     check_cmd = "git apply --check #{patch_file} --directory=#{directory_arg} -p2 2> /dev/null"
