@@ -7,6 +7,10 @@ module Pod
       def patch_file
         config.project_root + 'patches' + "#{@name}.diff"
       end
+
+      def patches_path
+        config.project_root + 'patches'
+      end
     end
   end
 end
