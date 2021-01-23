@@ -44,9 +44,9 @@ def apply_patch(patch_file)
       apply_cmd = check_cmd.gsub('--check ', '')
       did_apply = system(apply_cmd)
       if did_apply
-        Pod::UI.puts "Successfully applied #{patch_file}"
+        Pod::UI.puts "Successfully applied #{patch_file} 🎉"
       else
-        Pod::UI.warn "Failed to apply #{patch_file}"
+        Pod::UI.warn "Error: failed to apply #{patch_file}"
       end
     end
   }
