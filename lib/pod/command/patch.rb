@@ -1,3 +1,6 @@
+require_relative 'patch/apply'
+require_relative 'patch/create'
+
 module Pod
   class Command
     class Patch < Command

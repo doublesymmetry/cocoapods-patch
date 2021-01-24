@@ -46,8 +46,8 @@ module Pod
             specs_by_platform = installer.send :specs_for_pod, @name
 
             if specs_by_platform.empty?
-              UI.warn "Error: pod does not exist in project. Did you use incorrect pod name?"
               clear_patches_folder_if_empty
+              help! "Given pod does not exist in project. Did you use incorrect pod name?"
 
               return
             end
