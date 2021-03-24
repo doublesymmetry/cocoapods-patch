@@ -2,6 +2,22 @@ require 'cocoapods'
 require 'pathname'
 require_relative 'command/patch/apply'
 
+module CocoapodsPatch
+  module Hooks
+    Pod::HooksManager.register('cocoapods-patch', :pre_install) do |context|
+      Pod::UI.puts 'Preparing patchable pods for clean patching'
+      patches_dir = Pathname.new(Dir.pwd) + 'patches'
+      if patches_dir.directory?
+        patches = patches_dir.each_child.select { |c| c.to_s.end_with?('.diff') }
+        patches.each do |p|
+          pod_name = File.basename(p, ".diff")
+          context.sandbox.clean_pod(pod_name)
+        end
+      end
+    end
+  end
+end
+
 class Pod::Installer
   # Because our patches may also delete files, we need to apply them before the pod project is generated
   # The project is generated in the `integrate` method, so we override it
