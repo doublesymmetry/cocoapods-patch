@@ -1,2 +1,2 @@
-require 'cocoapods-patch/command'
-require 'cocoapods-patch/hook'
+require 'pod/command'
+require 'pod/hook'

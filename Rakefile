@@ -1,13 +1,6 @@
 require 'bundler/gem_tasks'
 
-def specs(dir)
-  FileList["spec/#{dir}/*_spec.rb"].shuffle.join(' ')
-end
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec)
 
-desc 'Runs all the specs'
-task :specs do
-  sh "bundle exec bacon #{specs('**')}"
-end
-
-task :default => :specs
-
+task default: :spec

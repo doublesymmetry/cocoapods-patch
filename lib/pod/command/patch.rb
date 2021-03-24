@@ -1,3 +1,6 @@
+require_relative 'patch/apply'
+require_relative 'patch/create'
+
 module Pod
   class Command
     class Patch < Command
@@ -6,6 +9,10 @@ module Pod
 
       def patch_file
         config.project_root + 'patches' + "#{@name}.diff"
+      end
+
+      def patches_path
+        config.project_root + 'patches'
       end
     end
   end
