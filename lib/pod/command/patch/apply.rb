@@ -37,7 +37,7 @@ def apply_patch(patch_file)
   directory_arg = (ios_project_path.to_s.eql? ".") ? "Pods" : File.join(ios_project_path, 'Pods')
 
   Dir.chdir(repo_root) {
-    check_cmd = "git apply --check #{patch_file} --directory=#{directory_arg} -p2 2> /dev/null"
+    check_cmd = "git apply --check '#{patch_file}' --directory='#{directory_arg}' -p2 2> /dev/null"
 
     can_apply = system(check_cmd)
     if can_apply
