@@ -58,7 +58,7 @@ module Pod
             UI.puts "Creating patch"
             theirs = Pathname.new(work_dir).join(@name).relative_path_from(config.project_root)
             ours = config.project_pods_root.join(@name).relative_path_from(config.project_root)
-            gen_diff_cmd = "git diff --no-index #{theirs} #{ours} > #{patch_file}"
+            gen_diff_cmd = "git diff --no-index '#{theirs}' '#{ours}' > '#{patch_file}'"
 
             did_succeed = system(gen_diff_cmd)
             if not did_succeed.nil?
