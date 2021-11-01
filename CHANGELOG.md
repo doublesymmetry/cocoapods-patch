@@ -6,7 +6,8 @@ To install or update cocoapods-patch see [README](https://github.com/DoubleSymme
 
 ##### Enhancements
 
-* None.
+* Use lockfile to use more correct installation of fresh dependencies.
+  [dcvz](https://github.com/dcvz)
 
 ##### Bug Fixes
 
