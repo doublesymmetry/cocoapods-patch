@@ -2,7 +2,17 @@
 
 To install or update cocoapods-patch see [README](https://github.com/DoubleSymmetry/cocoapods-patch).
 
-## Master
+## Main
+
+##### Enhancements
+
+* None.
+
+##### Bug Fixes
+
+* None.
+
+## 1.0.0 (1.11.21)
 
 ##### Enhancements
 
