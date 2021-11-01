@@ -36,7 +36,7 @@ module Pod
 
           Dir.mktmpdir('cocoapods-patch-', config.project_root) do |work_dir|
             sandbox = Pod::Sandbox.new(work_dir)
-            installer = Pod::Installer.new(sandbox, config.podfile)
+            installer = Pod::Installer.new(sandbox, config.podfile, config.lockfile)
             installer.clean_install = true
 
             installer.prepare
