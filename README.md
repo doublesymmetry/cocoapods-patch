@@ -17,7 +17,7 @@ That's it, you're done.
 
 **NOTE:**
 `cocoapods-patch` version 1.0.0 and above require you to use Cocoapods 1.11.0 or greater.
-For anything below that please use version 0.0.5.
+For anything below that please use version 0.0.9.
 
 ## Usage
 
