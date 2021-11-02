@@ -19,9 +19,9 @@ That's it, you're done.
 `cocoapods-patch` version 1.0.0 and above require you to use Cocoapods 1.11.0 or greater.
 For anything below that please use version 0.0.9.
 
-## Migrating to v1.0.0
+## Migrating to v1.0.1+
 
-In v1.0.0 of the plugin we've changed the naming scheme of the generated patch files to also include the version of the pods used to generate the patches. This will allow us to do more automation safety and make sure patches are applied successfully.
+In v1.0.1 of the plugin we've changed the naming scheme of the generated patch files to also include the version of the pods used to generate the patches. This will allow us to do more automation safety and make sure patches are applied successfully.
 
 We've added a new command to help with the migration. After updating before doing a `pod install` please first run `pod patch migrate` which will translate any existing patches into their new format. This will use the current version of the pods stated in your lockfile.
 
