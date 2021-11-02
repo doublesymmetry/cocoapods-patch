@@ -8,7 +8,8 @@ module Pod
       self.summary = 'Create & apply patches to Pods.'
 
       def patch_file
-        config.project_root + 'patches' + "#{@name}.diff"
+        version = config.lockfile.version(@name)
+        return config.project_root + 'patches' + "#{@name}+#{version}.diff"
       end
 
       def patches_path
