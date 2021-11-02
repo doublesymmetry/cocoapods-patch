@@ -6,6 +6,9 @@ To install or update cocoapods-patch see [README](https://github.com/DoubleSymme
 
 ##### Enhancements
 
+* Change name of generated patch files to include pod version used
+  [dcvz](https://github.com/dcvz)
+
 * Use lockfile to use more correct installation of fresh dependencies.
   [dcvz](https://github.com/dcvz)
 
