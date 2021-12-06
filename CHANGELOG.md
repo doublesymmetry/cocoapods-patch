@@ -12,6 +12,16 @@ To install or update cocoapods-patch see [README](https://github.com/DoubleSymme
 
 * None.
 
+## 1.0.2 (6.12.21)
+
+##### Enhancements
+
+* None.
+
+##### Bug Fixes
+
+* Revert to previous way of applying patches. There's a bug in Cocoapods that does not call hooks.
+
 ## 1.0.1 (2.11.21)
 
 ##### Enhancements
