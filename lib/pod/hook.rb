@@ -11,7 +11,8 @@ module CocoapodsPatch
         patches = patches_dir.each_child.select { |c| c.to_s.end_with?('.diff') }
         patches.each do |p|
           pod_name = File.basename(p, ".diff")
-          context.sandbox.clean_pod(pod_name)
+          pod_dir = context.sandbox.pod_dir(pod_name)
+          context.sandbox.clean_pod(pod_name, pod_dir)
         end
       end
     end
