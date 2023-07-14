@@ -12,7 +12,7 @@ To install or update cocoapods-patch see [README](https://github.com/DoubleSymme
 
 * None.
 
-## 1.0.3 (3.3.23)
+## 1.2.0 (14.6.23)
 
 ##### Enhancements
 
