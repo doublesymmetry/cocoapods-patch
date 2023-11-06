@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir['*.md', 'lib/**/*', 'LICENSE']
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency "cocoapods", "~> 1.12.0"
+  spec.add_runtime_dependency "cocoapods", ">= 1.12.0", "< 2.0"
 
   spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_development_dependency 'rake', '~> 13.0'
