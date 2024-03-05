@@ -1,9 +1,22 @@
-
 # cocoapods-patch
 
 cocoapods-patch is a Cocoapods plugin that solves the problem of forking and maintaining a separate version of a Pod when only a small (often a one-liner), long-lived change in the original Pod is needed.
 
 The idea behind the plugin is that patches should live inside the repo (in the `patches` directory) and be distributed together with the rest of your source code. This way, you can more easily code review and test the changes to a Pod and keep it synced across your team.
+
+<div align="left" valign="middle">
+<a href="https://runblaze.dev">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://www.runblaze.dev/logo_dark.png">
+   <img align="right" src="https://www.runblaze.dev/logo_light.png" height="102px"/>
+ </picture>
+</a>
+
+<br style="display: none;"/>
+
+_[Blaze](https://runblaze.dev) sponsors cocoapods-patch by providing super fast Apple Silicon based macOS Github Action Runners. Use the discount code `LAUNCH50` at checkout to get 50% off your first year._
+
+</div>
 
 ## Installation
 
