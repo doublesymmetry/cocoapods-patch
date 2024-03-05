@@ -1,0 +1,19 @@
+name: validate
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: blaze/macos-14
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Build gem
+        run: |
+          gem build cocoapods-patch.gemspec
